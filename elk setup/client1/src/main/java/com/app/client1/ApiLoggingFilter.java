@@ -41,7 +41,6 @@ public class ApiLoggingFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         try {
             chain.doFilter(request, response);
-
         } finally {
             long duration = System.currentTimeMillis() - startTime;
             MDC.put("api_url", httpRequest.getRequestURI());
